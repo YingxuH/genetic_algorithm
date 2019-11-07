@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
-  version = '0.1.1',
+  version = '0.1.2',
   license='MIT',
   description = 'A python package implementing the genetic algorithm',
   author = 'He Yingxu',
