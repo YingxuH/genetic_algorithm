@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
-  version = '0.1',
+  version = '0.1.1',
   license='MIT',
   description = 'A python package implementing the genetic algorithm',
   author = 'He Yingxu',
@@ -10,9 +10,6 @@ setup(
   url = 'https://github.com/YingxuH/genetic_algorithm',
   download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.1.tar.gz',
   keywords = ['genetic algorithm'],
-  install_requires=[
-          'random'
-      ],
   classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'Intended Audience :: Developers',
