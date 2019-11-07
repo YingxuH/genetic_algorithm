@@ -1,4 +1,6 @@
 import random
+import numpy as np
+import pandas as pd
 
 # genetic algorithm utils
 def genetic_optimisation(input_model, param_space, integer_params, pop_size, num_parents, max_num_generations,

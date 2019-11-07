@@ -1,4 +1,5 @@
 from distutils.core import setup
+
 setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
@@ -10,6 +11,10 @@ setup(
   url = 'https://github.com/YingxuH/genetic_algorithm',
   download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.1.tar.gz',
   keywords = ['genetic algorithm'],
+  install_requires = [
+    "numpy",
+    "pandas"
+  ],
   classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'Intended Audience :: Developers',
