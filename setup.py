@@ -8,7 +8,7 @@ setup(
   author = 'He Yingxu',
   author_email = 'yingxu.he1998@gmail.com',
   url = 'https://github.com/YingxuH/genetic_algorithm',
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
+  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.1.tar.gz',
   keywords = ['genetic algorithm'],
   install_requires=[
           'random'
