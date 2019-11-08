@@ -1,1 +1,1 @@
-from genetic_algorithm import main
+from .genetic_algorithm import genetic_optimization
