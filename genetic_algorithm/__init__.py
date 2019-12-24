@@ -1,1 +1,1 @@
-from .genetic_algorithm import genetic_optimization
+from .GeneticAlgorithm import GeneticAlgorithm
