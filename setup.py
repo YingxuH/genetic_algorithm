@@ -3,13 +3,13 @@ from distutils.core import setup
 setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
-  version = '0.1.3',
+  version = '0.2.1',
   license='MIT',
   description = 'A python package implementing the genetic algorithm',
   author = 'He Yingxu',
   author_email = 'yingxu.he1998@gmail.com',
   url = 'https://github.com/YingxuH/genetic_algorithm',
-  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.1.tar.gz',
+  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.2.1.tar.gz',
   keywords = ['genetic algorithm'],
   install_requires = [
     "numpy",
