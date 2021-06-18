@@ -39,4 +39,5 @@ ga = GeneticAlgorithm(model=fitness,
                       mutation_prob=0.2,
                       max_stop_rounds=5)
 
-ga.evolve()
+result = ga.evolve()
+print(result)

@@ -51,16 +51,16 @@ class GeneticAlgorithm(object):
                           pop_size=self.pop_size, arg_lst=self.param_space.keys())
 
     def evolve(self):
-        best_table = pd.DataFrame(columns=['fitness', 'params'])
+        best_table = []
         current_gen = self.populate()
 
         while self.still_count < self.max_stop_rounds and self.iteration < self.max_iter:
 
             current_gen.select()
 
-            best_table.append({'fitness': current_gen.get_best_fitness(),
-                               'params': current_gen.best_gene_set_to_print()},
-                              ignore_index=True)
+            best_table.append([current_gen.get_best_fitness(),
+                               current_gen.best_gene_set_to_print()])
+
 
             # The best result in the current iteration.
             print("Best fitness : {} with params: {}".format(current_gen.get_best_fitness(),
@@ -82,7 +82,9 @@ class GeneticAlgorithm(object):
 
             current_gen.mutate(self.mutation_prob)
 
-        return {"best fitness": self.best_parameters,
+        best_table = pd.DataFrame(best_table, columns=["Fitness", "Params"])
+
+        return {"best fitness": self.last_best_fitness,
                 "best params": self.best_parameters,
                 "history": best_table}
 
