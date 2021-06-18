@@ -1,20 +1,20 @@
-from distutils.core import setup
+import setuptools
 
-with open("README.md", "r") as fh:
+with open('README.md', 'r') as fh:
   long_description = fh.read()
 
-setup(
+setuptools.setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
-  version = '0.2.1',
+  version = '0.2.2',
   license='MIT',
   description = 'A python package implementing the genetic algorithm',
   long_description = long_description,
-  long_description_content_type="text/markdown",
+  long_description_content_type='text/markdown',
   author = 'He Yingxu',
   author_email = 'yingxu.he1998@gmail.com',
   url = 'https://github.com/YingxuH/genetic_algorithm',
-  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.2.1.tar.gz',
+  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.2.2.tar.gz',
   keywords = ['genetic algorithm', 'machine learning'],
   install_requires = [
     "numpy",
