@@ -1,5 +1,7 @@
 ### Genetic Algorithm 
 
+A black-box optimization package published in [pypi](https://pypi.org/project/genetic-algorithm/).
+
 #### Installation
     pip install genetic_algorithm
 
