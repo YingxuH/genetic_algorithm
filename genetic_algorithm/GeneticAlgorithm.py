@@ -9,16 +9,18 @@ from genetic_algorithm.Generation import Generation
 
 
 class GeneticAlgorithm(object):
-    def __init__(self, model, param_space, pop_size, parent_pool_size, max_iter,
-                 mutation_prob, max_stop_rounds):
+    def __init__(self, model, param_space, pop_size, parent_pool_size, keep_parent, max_iter,
+                 crossover_prob, mutation_prob, max_stop_rounds, verbose=True):
         self.model = model
         self.param_space = param_space
         self.pop_size = pop_size
         self.parent_pool_size = parent_pool_size
+        self.keep_parent = keep_parent
         self.max_iter = max_iter
-        # self.crossover_prob = crossover_prob
+        self.crossover_prob = crossover_prob
         self.mutation_prob = mutation_prob
         self.max_stop_rounds = max_stop_rounds
+        self.verbose = verbose
 
         self.still_count = 0
         self.iteration = 0
@@ -61,10 +63,10 @@ class GeneticAlgorithm(object):
             best_table.append([current_gen.get_best_fitness(),
                                current_gen.best_gene_set_to_print()])
 
-
-            # The best result in the current iteration.
-            print("Best fitness : {} with params: {}".format(current_gen.get_best_fitness(),
-                                                             current_gen.best_gene_set_to_print()))
+            if self.verbose:
+                # The best result in the current iteration.
+                print("Best fitness : {} with params: {}".format(current_gen.get_best_fitness(),
+                                                                 current_gen.best_gene_set_to_print()))
 
             if self.best_fitness is None or current_gen.get_best_fitness() >= self.best_fitness:
                 self.best_fitness = current_gen.get_best_fitness()
@@ -78,8 +80,7 @@ class GeneticAlgorithm(object):
             self.iteration += 1
             self.last_best_fitness = current_gen.get_best_fitness()
 
-            current_gen = current_gen.crossover()
-
+            current_gen = current_gen.crossover(self.crossover_prob, self.keep_parent)
             current_gen.mutate(self.mutation_prob)
 
         best_table = pd.DataFrame(best_table, columns=["Fitness", "Params"])

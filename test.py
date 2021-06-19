@@ -22,9 +22,12 @@ ga = GeneticAlgorithm(model=fitness,
                       param_space=param_space,
                       pop_size=100,
                       parent_pool_size=5,
+                      keep_parent=True,
                       max_iter=100,
                       mutation_prob=0.2,
-                      max_stop_rounds=5)
+                      crossover_prob=0.8,
+                      max_stop_rounds=5,
+                      verbose=False)
 
 result = ga.evolve()
 print(result)
