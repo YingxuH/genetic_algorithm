@@ -22,7 +22,7 @@ param_space = {"a": {'type': 'float', 'range':[0, 5]},
 
 ga = GeneticAlgorithm(model=fitness,
                       param_space=param_space,
-                      pop_size=500,
+                      pop_size=100,
                       parent_pool_size=10,
                       keep_parent=False,
                       max_iter=100,

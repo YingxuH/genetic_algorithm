@@ -39,15 +39,15 @@ The parameter space to be searched should come as a dictionary as follows:
 Run genetic algorithm.
 
     ga = GeneticAlgorithm(model=fitness,
-    param_space=param_space,
-    pop_size=500,
-    parent_pool_size=10,
-    keep_parent=False,
-    max_iter=100,
-    mutation_prob=0.3,
-    crossover_prob=0.7,
-    max_stop_rounds=5,
-    verbose=False)
+                        param_space=param_space,
+                        pop_size=100,
+                        parent_pool_size=10,
+                        keep_parent=False,
+                        max_iter=100,
+                        mutation_prob=0.3,
+                        crossover_prob=0.7,
+                        max_stop_rounds=5,
+                        verbose=False)
     
 Get the best parameters as well as the history. 
 
@@ -61,3 +61,11 @@ Visualize the difference between predicted and ground truth data:
     plt.scatter(x, predicted, s=3, c='r', label="predicted")
     plt.legend(loc='upper left')
     plt.show()
+
+![](./img/example1.png)
+There is still quite some difference between the predicted ones and the 
+ground truth. Let's change the population size from 100 to 500:
+![](./img/example2.png)
+
+The optimizer is working better than before. There are other parameters such as 
+cross-over rate and mutation rate which can also affect the optimization performance. Do play with them!
