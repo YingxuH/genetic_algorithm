@@ -63,6 +63,7 @@ Visualize the difference between predicted and ground truth data:
     plt.show()
 
 ![](./img/example1.png)
+
 There is still quite some difference between the predicted ones and the 
 ground truth. Let's change the population size from 100 to 500:
 ![](./img/example2.png)
