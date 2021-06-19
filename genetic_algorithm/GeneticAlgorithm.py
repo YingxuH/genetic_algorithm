@@ -9,13 +9,15 @@ from genetic_algorithm.Generation import Generation
 
 
 class GeneticAlgorithm(object):
-    def __init__(self, model, param_space, pop_size, parent_pool_size, keep_parent, max_iter,
-                 crossover_prob, mutation_prob, max_stop_rounds, verbose=True):
+    def __init__(self, model, param_space, pop_size=100, parent_pool_size=10, keep_parent=False,
+                 selection_method="rank", max_iter=100, crossover_prob=0.7, mutation_prob=0.3,
+                 max_stop_rounds=5, verbose=True):
         self.model = model
         self.param_space = param_space
         self.pop_size = pop_size
         self.parent_pool_size = parent_pool_size
         self.keep_parent = keep_parent
+        self.selection_method = selection_method
         self.max_iter = max_iter
         self.crossover_prob = crossover_prob
         self.mutation_prob = mutation_prob
@@ -58,7 +60,7 @@ class GeneticAlgorithm(object):
 
         while self.still_count < self.max_stop_rounds and self.iteration < self.max_iter:
 
-            current_gen.select()
+            current_gen.select(self.selection_method)
 
             best_table.append([current_gen.get_best_fitness(),
                                current_gen.best_gene_set_to_print()])

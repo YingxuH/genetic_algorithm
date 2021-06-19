@@ -1,5 +1,6 @@
 import random
-from copy import copy, deepcopy
+from copy import copy
+from scipy.special import softmax
 from genetic_algorithm.Individual import Individual
 
 
@@ -44,11 +45,18 @@ class Generation(object):
             fitness = self.model(ind.get_gene_set_to_print())
             ind.set_fitness(fitness)
 
-    def select(self):
+    def select(self, selection_method):
         self.calculate_fitness()
-        self.inds.sort(reverse=True)
-        self.parents = self.inds[:self.parent_pool_size]
-        self.best_ind = self.inds[0]
+        if selection_method == "rank":
+            self.inds.sort(reverse=True)
+            self.parents = self.inds[:self.parent_pool_size]
+            self.best_ind = self.inds[0]
+        elif selection_method == "roulette_wheel":
+            fitnesses = softmax([ind.get_fitness() for ind in self.inds])
+            self.parents = random.choices(self.inds, weights=fitnesses, k=self.parent_pool_size)
+            self.best_ind = sorted(self.parents, reverse=True)[0]
+        else:
+            raise Exception("unknown selection method: {}".format(selection_method))
 
     # TODO: shift implementation to individual
     # uniform cross over

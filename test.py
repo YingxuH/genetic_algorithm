@@ -7,7 +7,7 @@ x = np.linspace(0, 5, 1000)
 ground_truth = x**3 - 2*(x**2) + 1
 
 
-def func(a,b,c):
+def func(a, b, c):
     return x**a - b*(x**2) + c
 
 
@@ -15,9 +15,9 @@ def fitness(params):
     return -np.sqrt(np.mean((ground_truth-func(**params))**2))
 
 
-param_space = {"a": {'type': 'float', 'range':[0, 5]},
-               "b": {'type': 'float', 'range':[-1, 5]},
-               "c": {'type': 'int', 'range':[0, 3]}
+param_space = {"a": {'type': 'float', 'range': [0, 5]},
+               "b": {'type': 'float', 'range': [-1, 5]},
+               "c": {'type': 'int', 'range': [0, 3]}
                }
 
 ga = GeneticAlgorithm(model=fitness,
@@ -25,6 +25,7 @@ ga = GeneticAlgorithm(model=fitness,
                       pop_size=100,
                       parent_pool_size=10,
                       keep_parent=False,
+                      selection_method="roulette_wheel",
                       max_iter=100,
                       mutation_prob=0.3,
                       crossover_prob=0.7,

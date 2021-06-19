@@ -1,6 +1,6 @@
-from genetic_algorithm import GeneInterface
 import random
 from genetic_algorithm.GeneInterface import GeneInterface
+
 
 class ObjectGene(GeneInterface):
     def __init__(self, choices=None, gene_type=None):
