@@ -7,7 +7,7 @@ A black-box optimization package published in [pypi](https://pypi.org/project/ge
 
 #### Example
 
-The original example code can be found in [test.py](./test.py).
+The original example code can be found in [test.py](https://github.com/YingxuH/genetic_algorithm/blob/master/test.py).
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -64,7 +64,7 @@ Visualize the difference between predicted and ground truth data:
 
 population size = 100             |  population size = 500
 :-------------------------:|:-------------------------:
-![](./img/example1.png)  |  ![](./img/example2.png)
+![](https://github.com/YingxuH/genetic_algorithm/blob/master/img/example1.png)  |  ![](https://github.com/YingxuH/genetic_algorithm/blob/master/img/example2.png)
 
 There is still quite some difference between the predicted ones and the ground truth. 
 If the population size goes 100 to 500, the optimizer is then working better than before. There are other parameters such as 

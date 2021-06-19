@@ -6,7 +6,7 @@ with open('README.md', 'r') as fh:
 setuptools.setup(
   name = 'genetic_algorithm',
   packages = ['genetic_algorithm'],
-  version = '0.2.2',
+  version = '1.0.0',
   license='MIT',
   description = 'A python package implementing the genetic algorithm',
   long_description = long_description,
@@ -14,11 +14,12 @@ setuptools.setup(
   author = 'He Yingxu',
   author_email = 'yingxu.he1998@gmail.com',
   url = 'https://github.com/YingxuH/genetic_algorithm',
-  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/0.2.2.tar.gz',
-  keywords = ['genetic algorithm', 'machine learning'],
+  download_url = 'https://github.com/YingxuH/genetic_algorithm/archive/1.0.0.tar.gz',
+  keywords = ['genetic algorithm', 'machine learning', "optimization"],
   install_requires = [
     "numpy",
-    "pandas"
+    "pandas",
+    "scipy"
   ],
   classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
