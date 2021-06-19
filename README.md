@@ -62,12 +62,10 @@ Visualize the difference between predicted and ground truth data:
     plt.legend(loc='upper left')
     plt.show()
 
-![](./img/example1.png)
+population size = 100             |  population size = 500
+:-------------------------:|:-------------------------:
+![](./img/example1.png)  |  ![](./img/example2.png)
 
-There is still quite some difference between the predicted ones and the 
-ground truth. Let's change the population size from 100 to 500:
-
-![](./img/example2.png)
-
-The optimizer is working better than before. There are other parameters such as 
-cross-over rate and mutation rate which can also affect the optimization performance. Do play with them!
+There is still quite some difference between the predicted ones and the ground truth. 
+If the population size goes 100 to 500, the optimizer is then working better than before. There are other parameters such as 
+cross-over rate and mutation rate which can also affect the optimization performance. 
